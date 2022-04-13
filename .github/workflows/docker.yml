@@ -6,17 +6,18 @@ on:
     branches:
       - master
       - development
+      - 210-fix-docker-setup
 
 jobs:
-  build:
+  docker-build:
     runs-on: ubuntu-latest
 
     steps:
       - name: Wait for tests to succeed
-        uses: lewagon/wait-on-check-action@v1.0.0
+        uses: lewagon/wait-on-check-action@master
         with:
           ref: ${{ github.ref }}
-          running-workflow-name: 'Verify state'
+          running-workflow-name: 'docker-build'
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           allowed-conclusions: success
       - uses: actions/checkout@v3
