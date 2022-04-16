@@ -1,0 +1,107 @@
+[
+  {
+    "name": "rep",
+    "description": "Information about your or others reputation.",
+    "requiresManagerRole": false,
+    "subcommands": null,
+    "arguments": [
+      {
+        "name": "user",
+        "description": "The user you want to see the reputation.",
+        "required": false,
+        "type": "USER"
+      }
+    ]
+  },
+  {
+    "name": "prefix",
+    "description": "Show prefix",
+    "requiresManagerRole": true,
+    "subcommands": [
+      {
+        "name": "set",
+        "description": "Set the prefix",
+        "arguments": [
+          {
+            "name": "prefix",
+            "description": "prefix",
+            "required": true,
+            "type": "STRING"
+          }
+        ]
+      },
+      {
+        "name": "reset",
+        "description": "Reset the prefix",
+        "arguments": []
+      }
+    ],
+    "arguments": null
+  },
+  {
+    "name": "channel",
+    "description": "Manage channel for reputation collection.",
+    "requiresManagerRole": true,
+    "subcommands": [
+      {
+        "name": "set",
+        "description": "Set the reputation channel. Removes all other channels.",
+        "arguments": [
+          {
+            "name": "channel",
+            "description": "The new and only used reputation channel.",
+            "required": true,
+            "type": "CHANNEL"
+          }
+        ]
+      },
+      {
+        "name": "add",
+        "description": "Add a reputation channel.",
+        "arguments": [
+          {
+            "name": "channel",
+            "description": "The new reputation channel.",
+            "required": true,
+            "type": "CHANNEL"
+          }
+        ]
+      },
+      {
+        "name": "addall",
+        "description": "Add all channel as reputation channel.",
+        "arguments": []
+      },
+      {
+        "name": "remove",
+        "description": "Remove a reputation channel.",
+        "arguments": [
+          {
+            "name": "channel",
+            "description": "The reputation channel which should be removed.",
+            "required": true,
+            "type": "CHANNEL"
+          }
+        ]
+      },
+      {
+        "name": "list_type",
+        "description": "Define if the channel list should be used as white or blacklist.",
+        "arguments": [
+          {
+            "name": "type",
+            "description": "Define the list type",
+            "required": false,
+            "type": "STRING"
+          }
+        ]
+      },
+      {
+        "name": "list",
+        "description": "List reputation channel.",
+        "arguments": []
+      }
+    ],
+    "arguments": null
+  }
+]

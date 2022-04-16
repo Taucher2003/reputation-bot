@@ -1,0 +1,20 @@
+# Commands
+<% commands.each do |command| %>
+## <%= command["name"] %>
+
+<%= command["description"] %>
+<% if command["subcommands"]&.any?; command["subcommands"]&.each do |subcommand| %>
+### <%= subcommand["name"] %>
+
+<%= subcommand["description"] %>
+<% if subcommand["arguments"]&.any? %>
+#### Arguments
+<% subcommand["arguments"].each do |argument| %>
+* <%= argument["name"] %> - <%= argument["description"] %>
+<% if argument["required"] %> (Required)
+<% end end end end %>
+<% elsif command["arguments"]&.any?; %>
+### Arguments
+<% command["arguments"].each do |argument| %>
+* <%= argument["name"] %> - <%= argument["description"] %>
+<% if argument["required"] %> (Required) <% end end end end %>
